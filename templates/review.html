@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}{{ t('review_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow" style="max-width: 720px;">
+
+<div class="step-labels">
+    <span class="done">1. {{ t('app_form_title') }}</span>
+    <span class="done">2. {{ t('upload_title') }}</span>
+    <span class="done">3. {{ t('review_title') }}</span>
+    <span>4. {{ t('success_title') }}</span>
+</div>
+<div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+
+<div class="card">
+    <h1>{{ t('review_title') }}</h1>
+
+    <div class="summary-grid">
+        <div class="summary-item"><div class="label">{{ t('auth_fullname') }}</div><div class="value">{{ application.full_name }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_national_id') }}</div><div class="value">{{ application.national_id }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_dob') }}</div><div class="value">{{ application.dob }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_gender') }}</div><div class="value">{{ application.gender }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('auth_phone') }}</div><div class="value">{{ application.phone }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('auth_email') }}</div><div class="value">{{ application.email }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_occupation') }}</div><div class="value">{{ application.occupation or '—' }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_address') }}</div><div class="value">{{ application.address }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('dash_bank') }}</div><div class="value">{{ application.bank_name }}</div></div>
+        <div class="summary-item"><div class="label">{{ t('app_account_type') }}</div><div class="value">{{ application.account_type }}</div></div>
+    </div>
+
+    <h3>Uploaded Documents</h3>
+    {% if application.documents %}
+    <ul>
+        {% for doc in application.documents %}
+        <li>{{ doc.doc_type }} — <span class="hint">{{ doc.original_filename }}</span></li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="hint">No documents uploaded yet.</p>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('applications.submit', app_id=application.id) }}">
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ t('review_submit') }}</button>
+            <a class="btn btn-ghost" href="{{ url_for('applications.upload', app_id=application.id) }}">{{ t('app_back') }}</a>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}

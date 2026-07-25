@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ t('auth_login_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="card">
+    <h1>{{ t('auth_login_title') }}</h1>
+
+    <form method="POST" action="{{ url_for('auth.login', next=request.args.get('next')) }}">
+        <input type="hidden" name="next" value="{{ request.args.get('next', '') }}">
+
+        <div class="form-row">
+            <label for="email">{{ t('auth_email') }}</label>
+            <input type="email" id="email" name="email" required autofocus>
+        </div>
+
+        <div class="form-row">
+            <label for="password">{{ t('auth_password') }}</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">{{ t('auth_login_title') }}</button>
+        </div>
+    </form>
+
+    <p style="margin-top: 18px; font-size: 0.9rem;">
+        {{ t('auth_no_account') }} <a href="{{ url_for('auth.register') }}">{{ t('nav_register') }}</a>
+    </p>
+</div>
+</div>
+
+{% endblock %}

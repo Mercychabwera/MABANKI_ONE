@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{ t('upload_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow" style="max-width: 720px;">
+
+<div class="step-labels">
+    <span class="done">1. {{ t('app_form_title') }}</span>
+    <span class="done">2. {{ t('upload_title') }}</span>
+    <span>3. {{ t('review_title') }}</span>
+    <span>4. {{ t('success_title') }}</span>
+</div>
+<div class="progress-track"><div class="progress-fill" style="width: 50%;"></div></div>
+
+<div class="card">
+    <h1>{{ t('upload_title') }}</h1>
+    <p style="color:var(--ink-soft);">Accepted formats: PDF, PNG, JPG (max 8MB per file).</p>
+
+    <form method="POST" action="{{ url_for('applications.upload', app_id=application.id) }}" enctype="multipart/form-data">
+
+        <div class="form-row">
+            <label for="idcopy">{{ t('upload_id') }}</label>
+            <input type="file" id="idcopy" name="idcopy" accept=".pdf,.png,.jpg,.jpeg" required>
+        </div>
+
+        <div class="form-row">
+            <label for="photo">{{ t('upload_photo') }}</label>
+            <input type="file" id="photo" name="photo" accept=".pdf,.png,.jpg,.jpeg" required>
+        </div>
+
+        <div class="form-row">
+            <label for="residence">{{ t('upload_residence') }}</label>
+            <input type="file" id="residence" name="residence" accept=".pdf,.png,.jpg,.jpeg" required>
+        </div>
+
+        <div class="form-row">
+            <label for="employment">{{ t('upload_employment') }}</label>
+            <input type="file" id="employment" name="employment" accept=".pdf,.png,.jpg,.jpeg">
+        </div>
+
+        <div class="form-row">
+            <label for="business">{{ t('upload_business') }}</label>
+            <input type="file" id="business" name="business" accept=".pdf,.png,.jpg,.jpeg">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ t('app_save_continue') }}</button>
+            <a class="btn btn-ghost" href="{{ url_for('applications.details', app_id=application.id) }}">{{ t('app_back') }}</a>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}

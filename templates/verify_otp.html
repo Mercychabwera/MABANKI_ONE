@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}{{ t('auth_otp_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="card">
+    <h1>{{ t('auth_otp_title') }}</h1>
+    <p style="color: var(--ink-soft);">{{ t('auth_otp_instructions') }}</p>
+
+    {% if demo_code %}
+    <div class="demo-otp-banner">
+        <strong>DEMO MODE</strong> — no SMS/email gateway is connected yet.<br>
+        {{ t('auth_otp_code_label') }}: <span class="code">{{ demo_code }}</span>
+        <div style="margin-top:6px; font-size:0.82rem;">In production this code would be sent by SMS/email to {{ email }}.</div>
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('auth.verify_otp') }}">
+        <div class="form-row">
+            <label for="otp">6-digit code</label>
+            <input class="otp-input" type="text" id="otp" name="otp" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autofocus>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">{{ t('auth_verify_btn') }}</button>
+        </div>
+    </form>
+
+    <p style="margin-top: 16px; font-size: 0.9rem;">
+        Didn't get a code? <a href="{{ url_for('auth.resend_otp') }}">{{ t('auth_resend_otp') }}</a>
+    </p>
+</div>
+</div>
+
+{% endblock %}

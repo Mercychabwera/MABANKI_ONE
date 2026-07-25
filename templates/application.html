@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}{{ t('app_form_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow" style="max-width: 720px;">
+
+<div class="step-labels">
+    <span class="done">1. {{ t('app_form_title') }}</span>
+    <span>2. {{ t('upload_title') }}</span>
+    <span>3. {{ t('review_title') }}</span>
+    <span>4. {{ t('success_title') }}</span>
+</div>
+<div class="progress-track"><div class="progress-fill" style="width: 25%;"></div></div>
+
+<div class="card">
+    <h1>{{ t('app_form_title') }}</h1>
+    <p style="color:var(--ink-soft);">This information is saved automatically — you can come back and finish later from “{{ t('nav_dashboard') }}”.</p>
+
+    <form method="POST" action="{{ url_for('applications.details', app_id=application.id) }}">
+
+        <fieldset>
+        <legend>Personal Details</legend>
+        <div class="form-grid">
+            <div class="form-row">
+                <label for="fullname">{{ t('auth_fullname') }}</label>
+                <input type="text" id="fullname" name="fullname" value="{{ application.full_name or '' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="national_id">{{ t('app_national_id') }}</label>
+                <input type="text" id="national_id" name="national_id" value="{{ application.national_id or '' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="dob">{{ t('app_dob') }}</label>
+                <input type="date" id="dob" name="dob" value="{{ application.dob or '' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="gender">{{ t('app_gender') }}</label>
+                <select id="gender" name="gender" required>
+                    <option value="">—</option>
+                    <option value="Female" {{ 'selected' if application.gender == 'Female' }}>Female</option>
+                    <option value="Male" {{ 'selected' if application.gender == 'Male' }}>Male</option>
+                    <option value="Other" {{ 'selected' if application.gender == 'Other' }}>Other</option>
+                </select>
+            </div>
+        </div>
+        </fieldset>
+
+        <fieldset>
+        <legend>Contact</legend>
+        <div class="form-grid">
+            <div class="form-row">
+                <label for="phone">{{ t('auth_phone') }}</label>
+                <input type="tel" id="phone" name="phone" value="{{ application.phone or '' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="email">{{ t('auth_email') }}</label>
+                <input type="email" id="email" name="email" value="{{ application.email or '' }}" required>
+            </div>
+            <div class="form-row">
+                <label for="occupation">{{ t('app_occupation') }}</label>
+                <input type="text" id="occupation" name="occupation" value="{{ application.occupation or '' }}">
+            </div>
+            <div class="form-row">
+                <label for="address">{{ t('app_address') }}</label>
+                <input type="text" id="address" name="address" value="{{ application.address or '' }}" required>
+            </div>
+        </div>
+        </fieldset>
+
+        <fieldset>
+        <legend>Account</legend>
+        <div class="form-grid">
+            <div class="form-row">
+                <label for="bank">{{ t('app_select_bank') }}</label>
+                <select id="bank" name="bank" required>
+                    <option value="">{{ t('app_select_bank') }}</option>
+                    {% for bank in banks %}
+                    <option value="{{ bank.name }}" {{ 'selected' if application.bank_name == bank.name }}>{{ bank.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="account_type">{{ t('app_account_type') }}</label>
+                <select id="account_type" name="account_type" required>
+                    <option value="">{{ t('app_account_type') }}</option>
+                    <option {{ 'selected' if application.account_type == 'Savings Account' }}>Savings Account</option>
+                    <option {{ 'selected' if application.account_type == 'Current Account' }}>Current Account</option>
+                    <option {{ 'selected' if application.account_type == 'Student Account' }}>Student Account</option>
+                    <option {{ 'selected' if application.account_type == 'Business Account' }}>Business Account</option>
+                </select>
+            </div>
+        </div>
+        </fieldset>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">{{ t('app_save_continue') }}</button>
+            <a class="btn btn-ghost" href="{{ url_for('dashboard.dashboard') }}">{{ t('app_back') }}</a>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}
