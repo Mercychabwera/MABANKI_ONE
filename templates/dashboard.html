@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ t('dash_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div style="display:flex; align-items:center; justify-content:space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px;">
+    <h1 style="margin:0;">{{ t('dash_title') }}</h1>
+    <a class="btn btn-primary" href="{{ url_for('main.select_bank') }}">{{ t('dash_new_application') }}</a>
+</div>
+
+{% if applications %}
+<div class="app-list">
+    {% for app in applications %}
+    <div class="app-row">
+        <div class="meta">
+            <h3>{{ app.bank_name or 'Bank not chosen yet' }} &middot; {{ app.account_type or 'Account type pending' }}</h3>
+            <div class="sub">
+                {{ t('dash_updated') }}: {{ app.updated_at.strftime('%d %b %Y, %H:%M') }} UTC
+            </div>
+            <div class="progress-track" style="max-width: 260px;">
+                <div class="progress-fill" style="width: {{ app.progress_percent() }}%;"></div>
+            </div>
+        </div>
+
+        <span class="badge badge-{{ 'draft' if app.status == 'Draft' else 'submitted' if app.status == 'Submitted' else 'review' if app.status == 'Under Review' else 'approved' if app.status == 'Approved' else 'rejected' }}">
+            {{ app.status }}
+        </span>
+
+        {% if app.status == 'Draft' %}
+        <a class="btn btn-primary btn-sm" href="{{ url_for('applications.resume', app_id=app.id) }}">{{ t('dash_resume') }}</a>
+        {% else %}
+        <a class="btn btn-ghost btn-sm" href="{{ url_for('applications.review', app_id=app.id) }}">{{ t('dash_view') }}</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="empty-state card">
+    <span class="icon">📂</span>
+    <p>{{ t('dash_no_apps') }}</p>
+    <a class="btn btn-primary" href="{{ url_for('main.select_bank') }}">{{ t('dash_new_application') }}</a>
+</div>
+{% endif %}
+
+{% endblock %}

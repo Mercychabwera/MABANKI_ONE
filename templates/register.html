@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}{{ t('auth_register_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="card">
+    <h1>{{ t('auth_register_title') }}</h1>
+
+    <form method="POST" action="{{ url_for('auth.register') }}">
+        <div class="form-row">
+            <label for="fullname">{{ t('auth_fullname') }}</label>
+            <input type="text" id="fullname" name="fullname" value="{{ form.get('fullname', '') }}" required autofocus>
+        </div>
+
+        <div class="form-row">
+            <label for="email">{{ t('auth_email') }}</label>
+            <input type="email" id="email" name="email" value="{{ form.get('email', '') }}" required>
+        </div>
+
+        <div class="form-row">
+            <label for="phone">{{ t('auth_phone') }}</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 0991 234 567" value="{{ form.get('phone', '') }}" required>
+        </div>
+
+        <div class="form-row">
+            <label for="password">{{ t('auth_password') }} <span class="hint">(min. 8 characters)</span></label>
+            <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+
+        <div class="form-row">
+            <label for="confirm_password">{{ t('auth_confirm_password') }}</label>
+            <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">{{ t('nav_register') }}</button>
+        </div>
+    </form>
+
+    <p style="margin-top: 18px; font-size: 0.9rem;">
+        {{ t('auth_have_account') }} <a href="{{ url_for('auth.login') }}">{{ t('nav_login') }}</a>
+    </p>
+</div>
+</div>
+
+{% endblock %}

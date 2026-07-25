@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ t('upload_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="card">
+    <h1>{{ t('upload_title') }}</h1>
+    <p style="color: var(--ink-soft);">Please upload the following documents to complete your application for <strong>{{ application.bank_name }}</strong>.</p>
+
+    <form method="POST" action="{{ url_for('applications.upload', app_id=application.id) }}" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Required Documents</legend>
+
+            <div class="form-row">
+                <label for="idcopy">{{ t('upload_id') }}</label>
+                <input type="file" id="idcopy" name="idcopy" accept=".pdf,.png,.jpg,.jpeg" required>
+            </div>
+
+            <div class="form-row">
+                <label for="photo">{{ t('upload_photo') }}</label>
+                <input type="file" id="photo" name="photo" accept=".pdf,.png,.jpg,.jpeg" required>
+            </div>
+
+            <div class="form-row">
+                <label for="residence">{{ t('upload_residence') }}</label>
+                <input type="file" id="residence" name="residence" accept=".pdf,.png,.jpg,.jpeg" required>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Optional Documents</legend>
+
+            <div class="form-row">
+                <label for="employment">{{ t('upload_employment') }}</label>
+                <input type="file" id="employment" name="employment" accept=".pdf,.png,.jpg,.jpeg">
+            </div>
+
+            <div class="form-row">
+                <label for="business">{{ t('upload_business') }}</label>
+                <input type="file" id="business" name="business" accept=".pdf,.png,.jpg,.jpeg">
+            </div>
+        </fieldset>
+
+        <div class="form-actions">
+            <a class="btn btn-ghost" href="{{ url_for('applications.details', app_id=application.id) }}">{{ t('app_back') }}</a>
+            <button type="submit" class="btn btn-primary">{{ t('app_save_continue') }}</button>
+        </div>
+    </form>
+</div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Activity Log — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<h1>{{ 'Audit Log (All Users)' if scope == 'all' else 'My Activity' }}</h1>
+<p style="color:var(--ink-soft);">
+    {% if scope == 'all' %}
+    A record of security-relevant events across MABANKI-ONE, for administrators.
+    {% else %}
+    A record of security-relevant events on your account: registration, sign-ins, and application actions.
+    {% endif %}
+</p>
+
+<div class="table-wrap">
+<table class="log-table">
+<thead>
+<tr>
+    <th>When (UTC)</th>
+    {% if scope == 'all' %}<th>User</th>{% endif %}
+    <th>Action</th>
+    <th>Details</th>
+    <th>IP</th>
+</tr>
+</thead>
+<tbody>
+{% for log in logs %}
+<tr>
+    <td>{{ log.timestamp.strftime('%d %b %Y, %H:%M:%S') }}</td>
+    {% if scope == 'all' %}<td>{{ log.user.email if log.user else '—' }}</td>{% endif %}
+    <td><span class="log-action">{{ log.action }}</span></td>
+    <td>{{ log.details or '—' }}</td>
+    <td class="hint">{{ log.ip_address or '—' }}</td>
+</tr>
+{% else %}
+<tr><td colspan="{{ 5 if scope == 'all' else 4 }}" class="hint">No activity yet.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+{% endblock %}

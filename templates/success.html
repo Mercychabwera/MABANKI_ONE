@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}{{ t('success_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="card" style="text-align: center;">
+    <span style="font-size: 3rem; display: block; margin-bottom: 12px;">🎉</span>
+    <h1>{{ t('success_title') }}</h1>
+    <p style="font-size: 1.1rem; color: var(--ink-soft);">Thank you for using MABANKI-ONE.</p>
+    <p>Your application{% if application %} for <strong>{{ application.bank_name }}</strong>{% endif %} has been received and will be forwarded to your selected bank for review.</p>
+    <p style="color: var(--ink-soft);">The bank will contact you after processing your application.</p>
+
+    <div style="margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a class="btn btn-primary" href="{{ url_for('dashboard.dashboard') }}">{{ t('nav_dashboard') }}</a>
+        <a class="btn btn-ghost" href="{{ url_for('main.home') }}">Return Home</a>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
