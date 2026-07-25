@@ -1,4 +1,4 @@
-"""Static content used by the app: participating banks and financial
+u"""Static content used by the app: participating banks and financial
 literacy tips, each provided in English, Chichewa and Chitumbuka."""
 
 BANKS = [
@@ -44,13 +44,13 @@ LITERACY_TIPS = [
     {
         "icon": "🏦",
         "title": {
-            "en": "Why Open a Bank Account?",
-            "ny": "Bwanji Kutsegula Akaunti ya Banki?",
+            "en": "Why do you want to Open a Bank Account?",
+            "ny": "Bwanji mwafuna kutsegula Akaunti ya Banki?",
             "tum": "Chifukwa Wuli Kujula Akaunti ya Banki?",
         },
         "body": {
-            "en": "A bank account keeps your money safer than cash at home, lets you receive payments and salaries directly, and helps you build a financial history that banks look at when you apply for a loan.",
-            "ny": "Akaunti ya banki imasunga ndalama zanu bwino kuposa kuzisunga kunyumba, imakuthandizani kulandira malipiro mwachindunji, ndipo imakuthandizani kupanga mbiri ya ndalama yomwe mabanki amayang'ana mukapempha ngongole.",
+            "en": "A bank account keeps your money safer than cash at home, lets you receive payments and salaries directly and helps you build a financial history that banks look at when you apply for a loan.",
+            "ny": "Akaunti ya banki imasunga ndalama zanu bwino kuposa kuzisunga kunyumba, imakuthandizani kulandira malipiro mwachindunji ndipo imakuthandizani kupanga mbiri ya ndalama yomwe mabanki amayang'ana mukapempha ngongole.",
             "tum": "Akaunti ya banki yikusunga ndalama zinu makora kuluska kuzisunga kukaya, yikumovwira kupokelera malipiro mwendo, ndipo yikumovwira kuŵika mbiri ya ndalama iyo mabanki ghakulaŵiska para mukupempha ngongoli.",
         },
     },
