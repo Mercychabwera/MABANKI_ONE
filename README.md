@@ -223,3 +223,56 @@ Demo Link:
 (To be added)
 ---
 
+Business Model Summary
+  
+MABANKI-ONE
+
+1. Problem Statement
+Many people face several challenges when opening a bank account. These include:  
+- Limited access to banking information – Many people do not know the requirements or steps for opening an account.  
+- Low financial literacy– Some customers struggle to understand different account types and banking services.  
+- Time-consuming application process – Customers spend a lot of time travelling to bank branches filling out paper forms and waiting in long queues.  
+- Difficulty choosing suitable financial products– Customers may not know which account best suits their needs.  
+- Language barriers – Some customers cannot easily understand banking information because it is not available in their preferred language.  
+
+These challenges make banking less accessible especially for first-time users and people living far from bank branches.
+
+2. Target Users  
+Our solution is designed for:  
+Students  
+Working professionals  
+Small business owners  
+First-time bank customers  
+People in rural and urban areas  
+Banks that want to improve customer service and reduce paperwork
+
+3. Value Proposition
+Binary Minds – Scan & Sign offers a secure simple and paperless way to open a bank account.  
+Our solution provides:  
+- Online account opening from anywhere  
+- ID scanning for faster data capture  
+- Electronic signature for paperless applications  
+- Clear information about banking products  
+- Multiple language support to reduce language barriers  
+- A faster and more convenient customer experience  
+- Reduced paperwork and lower operational costs for banks
+
+4. How the Project Could Be Sustained or Generate Value 
+The project can generate value by:  
+- Allowing banks to subscribe to or license the platform  
+- Reducing printing storage and administrative costs  
+- Helping banks process more applications in less time  
+- Improving customer satisfaction which can attract more customers  
+- Expanding the platform to serve multiple banks in Malawi and beyond
+
+5. Future Plans
+In future versions we plan to add:  
+- AI-powered document verification  
+- Facial recognition for identity verification  
+- Live chat customer support  
+- Mobile banking integration  
+- Real-time application tracking  
+- More local language options  
+- Financial education tips to improve users' financial literacy  
+- Personalised account recommendations based on customer needs
+
