@@ -2,36 +2,99 @@
 <html>
 <head>
     <title>Select Bank</title>
+
+<style>
+   body{
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+}
+
+   header{
+      background: #003366;
+      color: white
+      text-align: center;
+      padding: 18px;
+}
+
+   .container{
+       width: 50%;
+       margin: 50px auto;
+       background: white;
+       padding: 25px; 
+       border-radius: 10px;
+       box-shadow: 0 0 10px rgba(0,0,0,0,2);
+}
+
+    h2{
+     text-align: center;
+     color: #003366;
+}
+
+   label{
+     font-size: 18px;
+     font-weight: bold;
+}
+
+  select{
+     width: 100%;
+     padding: 12px;
+     margin-top: 10px;
+     margin-bottom: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 14px;
+}
+
+  button: hover {
+     background: #0055aa;
+}
+</style>
+
 </head>
 <body>
 
-<h1>Select Your Bank</h1>
+<header>
+   <h1>MABANKI-ONE</h1>
+    <p>Select the bank where you want to open an account</p>
+</header>
 
-<form action="/customer-details" method="POST">
+<div class="container">
 
-    <label>Select Bank:</label>
-    <br><br>
+   <h2>Select Your Bank</h2>
 
-    <select name="bank" required>
+   <form action="/application"
+method="GET">
 
-        <option value="">Choose Bank</option>
+    <label for="bank">Choose a Bank</label>
 
-        <option>National Bank</option>
-        <option>FDH Bank</option>
-        <option>NBS Bank</option>
-        <option>Standard Bank</option>
-        <option>CDH Bank</option>
-        <option>Ecobank</option>
+    <select id="bank"name="bank"required>
+     
+      <option value="">-Select Bank-</option>
 
-    </select>
+      <option value="National Bank of Malawi">National Bank of Malawi</option>
 
-    <br><br>
+      <option value="FDH Bank">FDH Bank</option>
 
-    <button type="submit">
-        Click here to continue
-    </button>
+     <option value="NBS Bank">NBS Bank</option>
 
-</form>
+     
+     <option value="Standard Bank Malawi">Standard Bank Malawi</option>
+
+     <option value="First Capital Bank">First Capital Bank</option>
+
+     <option value="CDH Investment Bank">CDH Investment Bank</option>
+  
+     <option value="Ecobank Malawi">Ecobank Malawi</option>
+
+     </select>
+
+     <button
+type="submit">Click to continue</button>
+
+    </form>
+
+</div>
 
 </body>
 </html>
