@@ -1,126 +1,80 @@
-# MABANKI-ONE
+MABANKI-ONE
+FINOVATE 2026 Hackathon Project
 
-## FINOVATE 2026 Hackathon Project
+Team Name: Binary minds
 
-### Team Name
+University: Lilongwe University of Agriculture and  Natural Resources (LUANAR)
 
-binary minds
+Project Overview:
+Mabanki-One is a unified banking portal that allows users to access banking services from multiple banks through a single platform. Instead of visiting different bank websites, users can compare products, learn about financial services, receive recommendations and apply online in one place.
 
-### University
+"Building Student-Led Solutions for Banking, Payments and Financial Inclusion."
 
-lilongwe university of Agriculture and natural resources (LUARNA)
----
-
-# Project Overview
-
-Mabanki-One is a unified banking portal that allows users to access banking services from multiple banks through a single platform.
-Instead of visiting different bank websites, users can compare products, learn about financial services, receive recommendations, and apply online in one place.
-
-**"Building Student-Led Solutions for Banking, Payments and Financial Inclusion."**
----
-# Problem Statement
-
+Problem Statement:
 Many people in Malawi find it difficult to compare banking products because information is spread across different banks.
 
 Challenges include:
-
-* Limited access to banking information
-* Low financial literacy
-* Time-consuming application processes
-* Difficulty choosing suitable financial products
----
-
-# Our Solution
-
+✓. Limited access to banking information
+Low financial literacy
+✓. Time-consuming application processes
+✓. Difficulty choosing suitable financial products
+Suggested Solution
 Mabanki-One provides a single platform where users can:
+✓. Compare banking products from different banks
+✓. Learn financial concepts through simple educational content
+✓. Get personalized recommendations
+✓. Apply for banking services online
+✓. Track application status
+✓. Continue unfinished applications 
+✓. Access information in local languages
 
-* Compare banking products from different banks
-* Learn financial concepts through simple educational content
-* Get personalized recommendations
-* Apply for banking services online
-* Track application status
-* Continue unfinished applications
-* Access information in local languages
+Installation Guide:
+✓. Step 1: Open the Project Repository
+and then visit the project repository:
 
-# Installation Guide
+"MABANKI_ONE Repository"
 
-### Step 1: Open the Project Repository
+✓. Step 2: Download the Project
+=> Click on the green Code button.
+=> Click Download ZIP.
+=> Save the ZIP file to your computer.
+=> Extract the ZIP file.
+✓. Step 3: Open the Project Folder
+=> Open the extracted "MABANKI_ONE" folder in Visual Studio Code.
 
-Visit the project repository:
-
-[MABANKI_ONE Repository](https://github.com/Mercychabwera/MABANKI_ONE?utm_source=chatgpt.com)
-
-### Step 2: Download the Project
-
-1. Click the green **Code** button.
-2. Click **Download ZIP**.
-3. Save the ZIP file to your computer.
-4. Extract the ZIP file.
-
-### Step 3: Open the Project Folder
-
-Open the extracted **MABANKI_ONE** folder in Visual Studio Code.
-
-### Step 4: Open Terminal
-
-In VS Code:
-
-* Click **Terminal**
-* Click **New Terminal**
-
-### Step 5: Create a Virtual Environment
-
-```bash
+✓. Step 4: Open Terminal in VS Code:
+=> Click Terminal
+=> Click New Terminal
+✓. Step 5: Create a Virtual Environment
 python -m venv venv
-```
-
-### Step 6: Activate the Virtual Environment
-
-```bash
+✓. Step 6: Activate the Virtual Environment
 venv\Scripts\activate
-```
-
-### Step 7: Install Required Packages
-
-```bash
-pip install -r requirements.txt
-```
-
-### Step 8: Run the Application
-
-```bash
-python app.py
-```
-
-### Step 9: Open the Application
-
+✓. Step 7: Install Required Packages
+ pip install -r requirements.txt 
+✓. Step 8: Run the Application
+ python app.py 
+✓. Step 9: Open the Application.
 After running the command above, open your web browser and go to:
 
-```text
-*http://127.0.0.1:5000**.
-```
-You should now see the Mabanki-One application running.
----
-# Technologies Used
+http://127.0.0.1:5000
 
-### Frontend
-* HTML
-* CSS
-* Bootstrap
+You will now see the Mabanki-One application running.
 
-### Backend
-* Python
-* Flask
-
-### Database
-* SQLite
-### Development Tools
-* Git
-* GitHub
-* Visual Studio Code
-## 🗂️ Project structure
-
-```
+Technologies Used:
+Frontend
+HTML
+CSS
+Bootstrap
+Backend
+Python
+Flask
+Database
+SQLite
+Development Tools
+Git
+GitHub
+Visual Studio Code
+🗂️ Project structure
 mabanki-one/
 ├── app.py                 # App factory, blueprint registration, i18n wiring, CLI commands
 ├── config.py               # Configuration (secret key, DB URI, upload limits, languages)
@@ -138,101 +92,64 @@ mabanki-one/
 ├── static/css/style.css        # Single stylesheet, CSS variables for theming
 ├── uploads/                   # KYC files land here, namespaced per user/application
 └── instance/                  # SQLite database file lives here (auto-created)
-```
-
-
-### Step 7: Key Features
+Step 7: Key Features
 Multi-Bank Access
 
 Users can view banking products from different banks in one place.
 
-Product Comparison
+Product Comparison:
+✓. Compare savings accounts, loans, and other banking products easily.
 
-Compare savings accounts, loans, and other banking products easily.
+Financial Literacy Hub:
+✓. Provides simple explanations of banking and financial topics.
 
-Financial Literacy Hub
+Smart Recommendations:
+✓. Suggests suitable banking products based on user needs.
 
-Provides simple explanations of banking and financial topics.
-
-Smart Recommendations
-
-Suggests suitable banking products based on user needs.
-
-Application Tracking
-
-Allows users to check the progress of submitted applications.
+Application Tracking:
+✓. Allow users to check the progress of submitted applications.
 
 Multi-Language Support
+✓. Available both in:
+=> English, Chichewa and Chitumbuka
 
-Available in:
+Secure Login: 
+✓. Passwords are encrypted using industry-standard hashing methods. 
+✓. Plain-text passwords are not permitted. 
 
-English
-Chichewa
-Chitumbuka
+OTP Verification: ✓.One-Time Passwords are used for additional account security and OTP codes expire automatically after a short period.
 
-Secure Login
-Passwords are encrypted using industry-standard hashing methods.
-Plain-text passwords are never stored.
+User Privacy Users can only access their own applications and documents.
 
-OTP Verification
-One-Time Passwords are used for additional account security.
-OTP codes expire automatically after a short period.
+Secure File Uploads: ✓. Uploaded documents are stored securely. 
+✓. File names are automatically protected.
 
-User Privacy
-Users can only access their own applications and documents.
+Audit Logging: ✓.Important system activities are recorded for security and monitoring purposes.
 
-Secure File Uploads
-Uploaded documents are stored securely.
-File names are automatically protected.
+ Team Members and Roles: 
+1. Jacqueline Kufeyani: Project Manager & Documentation Lead 
+2. Mercy Chabwera: Software Developer 
+3. Martha James: Presenter & Pitch Lead 
+4. Wezzie Muheka: Research Lead
+5. Dines Nkumcheza: Business Strategist
 
-Audit Logging
-Important system activities are recorded for security and monitoring purposes.
----
-#Team Members and Roles
-
-Jacqueline Kufeyani	Project Manager & Documentation Lead
-Mercy Chabwera	Software Developer
-Martha James	Presenter & Pitch Lead
-Wezzie Muheka	Research Lead
-Dines Nkumcheza	Business Strategist
-
-# Future Improvements
-
-* Mobile application
-* USSD integration
-* More bank partnerships
-* AI-powered chatbot assistant
-* Fraud detection features
-* Open banking APIs
----
-# Screenshots
-
-Include screenshots of:
-
-* Home Page
-* Compare Banks Page
-* Financial Literacy Page
-* Recommendation Page
-* Application Status Page
----
-
-# Demo Video
-
-Demo Link:
-
-(To be added)
----
+Future Improvements:
+✓. Mobile application
+✓. USSD integration
+✓. More bank partnerships
+✓. AI-powered chatbot assistant
+✓. Fraud detection features
 
 Business Model Summary
   
 MABANKI-ONE
 
-1. Problem Statement
+1. Problem Statement  
 Many people face several challenges when opening a bank account. These include:  
 - Limited access to banking information – Many people do not know the requirements or steps for opening an account.  
-- Low financial literacy– Some customers struggle to understand different account types and banking services.  
+- Low financial literacy – Some customers struggle to understand different account types and banking services.  
 - Time-consuming application process – Customers spend a lot of time travelling to bank branches filling out paper forms and waiting in long queues.  
-- Difficulty choosing suitable financial products– Customers may not know which account best suits their needs.  
+- Difficulty choosing suitable financial products – Customers may not know which account best suits their needs.  
 - Language barriers – Some customers cannot easily understand banking information because it is not available in their preferred language.  
 
 These challenges make banking less accessible especially for first-time users and people living far from bank branches.
@@ -246,7 +163,7 @@ First-time bank customers
 People in rural and urban areas  
 Banks that want to improve customer service and reduce paperwork
 
-3. Value Proposition
+3. Value Proposition  
 Binary Minds – Scan & Sign offers a secure simple and paperless way to open a bank account.  
 Our solution provides:  
 - Online account opening from anywhere  
@@ -257,7 +174,7 @@ Our solution provides:
 - A faster and more convenient customer experience  
 - Reduced paperwork and lower operational costs for banks
 
-4. How the Project Could Be Sustained or Generate Value 
+4. How the Project Could Be Sustained or Generate Value  
 The project can generate value by:  
 - Allowing banks to subscribe to or license the platform  
 - Reducing printing storage and administrative costs  
@@ -265,7 +182,7 @@ The project can generate value by:
 - Improving customer satisfaction which can attract more customers  
 - Expanding the platform to serve multiple banks in Malawi and beyond
 
-5. Future Plans
+5. Future Plans  
 In future versions we plan to add:  
 - AI-powered document verification  
 - Facial recognition for identity verification  
@@ -275,4 +192,3 @@ In future versions we plan to add:
 - More local language options  
 - Financial education tips to improve users' financial literacy  
 - Personalised account recommendations based on customer needs
-
