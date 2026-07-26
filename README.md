@@ -7,27 +7,166 @@ participating banks, learn the basics of personal finance, and complete a
 single online application — including KYC document upload — to open an
 account with the bank of their choice.
 
-Built for the **FINOVATE Challenge**.
+## problem
+Many people find it difficult to compare banking products from different banks. They have to visit multiple bank branches or websites to find information about loans, savings accounts, and other services.
+
+Many customers also do not understand banking terms such as interest rates, processing fees, and repayment periods.
+
+This makes it difficult to make good financial decisions.
+## Solution
+
+MABANKI ONE is a Unified Multi-Bank Banking Portal that allows customers to access services from multiple banks using one platform.
+
+The system helps users:
+- Compare banking products
+- Learn financial concepts
+- Apply for services online
+- Upload required documents
+- Track applications
+- Continue applications later if they leave before finishing
+## Main Features
+
+### Language Selection
+Users can choose:
+
+- English
+- Chichewa
+- Chitumbuka
+
+### User Registration
+Users create one account and access services through the portal.
+
+### Compare Banking Products
+Users can compare:
+
+- Loans
+- Savings Accounts
+- Current Accounts
+
+### Financial Literacy
+The system explains banking terms such as:
+
+- Interest Rate
+- Processing Fee
+- Monthly Payment
+
+### Smart Recommendation
+The system recommends the best product based on user information.
+
+### Digital KYC
+Users can upload:
+
+- National ID
+- Passport Photo
+- Other supporting documents
+
+### Application Tracking
+Users can see if their application is:
+
+- Submitted
+- Under Review
+- Approved
+- Rejected
+
+### Save and Resume
+Users can continue an application from where they stopped.
 
 ---
 
-## ✨ What's in this build
+## Technologies Used
 
-| Feature | Notes |
-|---|---|
-| 🌍 Multi-language UI | English, Chichewa, Chitumbuka — switch anytime from the header |
-| 🏦 Smart bank comparison | Side-by-side savings/loan rates and opening balances |
-| 📚 Financial literacy module | Short, translated tips on saving, interest, budgeting, debt, KYC |
-| 👤 User registration & login | Email + password, session-based auth |
-| 🔒 Password hashing | Werkzeug `generate_password_hash` / `check_password_hash` — no plaintext passwords, ever |
-| 🔐 MFA (OTP-based) | 6-digit one-time code required after password, 5-minute expiry |
-| 💾 Save-and-resume applications | Every step is saved to the database; "My Applications" lets you pick up where you left off |
-| 📎 KYC document upload | ID, photo, proof of residence (+ optional employment/business docs) |
-| 📊 Application tracking dashboard | Status badges and progress bar per application |
-| 🧾 Audit logs | Every security-relevant action (register, login, OTP, uploads, submission) is logged; users see their own trail, admins see everyone's |
-| 🎨 Refreshed UI | Clean, distinct visual identity, responsive layout |
+### Frontend
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+
+### Backend
+- Python
+- Flask
+
+### Database
+- SQLite
+
+### Version Control
+- Git
+- GitHub
 
 ---
+
+## Installation
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Mercychabwera/MABANKI_ONE.git
+```
+
+### 2. Open Project Folder
+
+```bash
+cd MABANKI_ONE
+```
+
+### 3. Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate Virtual Environment
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Run Project
+
+```bash
+python app.py
+```
+
+### 7. Open Browser
+
+```text
+http://127.0.0.1:5000
+```
+---
+## Demo Flow
+
+1. Select Language
+2. Register Account
+3. Login
+4. Choose Financial Goal
+5. Compare Products
+6. Read Financial Literacy Tips
+7. Get Recommendation
+8. Upload Documents
+9. Submit Application
+10. Track Application Status
+
+## Team Members
+
+- Jacqueline Kufeyani – Documentation & Presentation
+- Mercy Chabwera – Backend Development
+- martha – Frontend Development
+- wezzie  muheka Member – UI/UX & Testing
+
+--## Screenshots
+Include screenshots of:
+
+- Home Page
+- Login Page
+- Registration Page
+- Product Comparison Page
+- Dashboard
+- KYC Upload Page
 
 ## ⚠️ Demo-mode notes (read this before judging)
 
