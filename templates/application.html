@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>MABANKI-ONE</h1>
+    <p>Complete your account application.</p>
+</header>
+
+<div class="container">
+
+<h2>Application Form</h2>
+
+<form action="/review" method="POST">
+
+<label>Full Name</label>
+<input type="text" name="fullname" placeholder="Enter your full name" required>
+
+<label>Phone Number</label>
+<input type="text" name="phone" placeholder="Enter your phone number" required>
+
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<label>Select Bank</label>
+<select name="bank" required>
+    <option value="">Choose a Bank</option>
+    <option>National Bank of Malawi</option>
+    <option>Standard Bank Malawi</option>
+    <option>FDH Bank</option>
+    <option>NBS Bank</option>
+</select>
+
+<label>Account Type</label>
+<select name="account" required>
+    <option value="">Choose Account Type</option>
+    <option>Savings Account</option>
+    <option>Current Account</option>
+    <option>Student Account</option>
+    <option>Business Account</option>
+</select>
+
+<br><br>
+
+<button type="submit">
+Continue
+</button>
+
+</form>
+
+<br>
+
+<a href="/select-bank">
+    <button type="button">Back</button>
+</a>
+
+</div>
+
+</body>
+</html>

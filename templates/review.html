@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>MABANKI-ONE</h1>
+    <p>Review your application before submitting.</p>
+</header>
+
+<div class="container">
+
+<h2>Review Your Details</h2>
+
+<p><strong>Full Name:</strong> {{ fullname }}</p>
+
+<p><strong>Phone Number:</strong> {{ phone }}</p>
+
+<p><strong>Email:</strong> {{ email }}</p>
+
+<p><strong>Selected Bank:</strong> {{ bank }}</p>
+
+<p><strong>Account Type:</strong> {{ account }}</p>
+
+<form action="/success" method="POST">
+
+<button type="submit">
+Submit Application
+</button>
+
+</form>
+
+<br>
+
+<a href="/application">
+<button type="button">
+Back
+</button>
+</a>
+
+</div>
+
+</body>
+</html>

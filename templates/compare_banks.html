@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Banks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>MABANKI-ONE</h1>
+    <p>Compare banks and choose the one that is right for you.</p>
+</header>
+
+<div class="container">
+
+<h2>Compare Banks</h2>
+
+<table>
+
+<tr>
+    <th>Bank</th>
+    <th>Savings Interest</th>
+    <th>Loan Interest</th>
+    <th>Opening Balance</th>
+    <th>Action</th>
+</tr>
+
+{% for bank in banks %}
+
+<tr>
+
+<td>{{ bank.name }}</td>
+
+<td>{{ bank.savings }}</td>
+
+<td>{{ bank.loan }}</td>
+
+<td>{{ bank.opening }}</td>
+
+<td>
+
+<form action="/application" method="GET">
+
+<input
+type="hidden"
+name="bank"
+value="{{ bank.name }}">
+
+<button>
+
+Open Account
+
+</button>
+
+</form>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/">
+<button>Back Home</button>
+</a>
+
+</div>
+
+</body>
+</html>
