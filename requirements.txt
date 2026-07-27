@@ -10,3 +10,5 @@ blinker==1.9.0
 SQLAlchemy==2.0.51
 greenlet==3.3.2
 typing_extensions==4.15.0
+gunicorn==21.2.0
+
