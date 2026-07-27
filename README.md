@@ -182,13 +182,5 @@ The project can generate value by:
 - Improving customer satisfaction which can attract more customers  
 - Expanding the platform to serve multiple banks in Malawi and beyond
 
-5. Future Plans  
-In future versions we plan to add:  
-- AI-powered document verification  
-- Facial recognition for identity verification  
-- Live chat customer support  
-- Mobile banking integration  
-- Real-time application tracking  
-- More local language options  
-- Financial education tips to improve users' financial literacy  
+5ncial literacy  
 - Personalised account recommendations based on customer needs
