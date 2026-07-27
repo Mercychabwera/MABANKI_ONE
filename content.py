@@ -4,7 +4,7 @@ literacy tips, each provided in English, Chichewa and Chitumbuka."""
 BANKS = [
     {
         "name": "National Bank of Malawi",
-        "logo": "img/bank-logos/nbm.svg",
+        "logo": "img/bank-logos/nbm.jpg",
         "savings": "10% per year",
         "loan": "24% per year",
         "opening": "MK5,000",
@@ -25,7 +25,7 @@ BANKS = [
     },
     {
         "name": "NBS Bank",
-        "logo": "img/bank-logos/nbs.png",
+        "logo": "img/bank-logos/nbs.jpg",
         "savings": "9.5% per year",
         "loan": "23% per year",
         "opening": "MK5,000",
@@ -39,7 +39,7 @@ BANKS = [
     },
     {
         "name": "Ecobank Malawi",
-        "logo": "img/bank-logos/ecobank.svg",
+        "logo": "img/bank-logos/ecobank.jpg",
         "savings": "9% per year",
         "loan": "22.5% per year",
         "opening": "MK5,000",
