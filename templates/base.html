@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}MABANKI-ONE{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="tricolor-rule" aria-hidden="true"></div>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="{{ url_for('main.home') }}">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span class="brand-name">MABANKI<span class="brand-dash">-</span>ONE</span>
+        </a>
+
+        <nav class="main-nav">
+            <a href="{{ url_for('main.select_bank') }}">{{ t('nav_compare') }}</a>
+            <a href="{{ url_for('main.literacy') }}">{{ t('nav_literacy') }}</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('dashboard.dashboard') }}">{{ t('nav_dashboard') }}</a>
+            {% endif %}
+        </nav>
+
+        <div class="header-actions">
+            <div class="lang-switch">
+                <span class="lang-current">{{ language_names[current_lang] }} ▾</span>
+                <div class="lang-menu">
+                    {% for code in languages %}
+                        <a href="{{ url_for('main.set_language', lang_code=code) }}"
+                           class="{{ 'active' if code == current_lang else '' }}">{{ language_names[code] }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% if current_user.is_authenticated %}
+                <div class="user-menu">
+                    <span class="user-chip">{{ current_user.fullname.split(' ')[0] }}</span>
+                    <div class="user-dropdown">
+                        <a href="{{ url_for('dashboard.dashboard') }}">{{ t('nav_dashboard') }}</a>
+                        <a href="{{ url_for('dashboard.my_activity') }}">Activity Log</a>
+                        {% if current_user.is_admin %}
+                        <a href="{{ url_for('dashboard.admin_audit_log') }}">Admin: Audit Log</a>
+                        {% endif %}
+                        <a href="{{ url_for('auth.logout') }}">{{ t('nav_logout') }}</a>
+                    </div>
+                </div>
+            {% else %}
+                <a class="btn btn-ghost btn-sm" href="{{ url_for('auth.login') }}">{{ t('nav_login') }}</a>
+                <a class="btn btn-primary btn-sm" href="{{ url_for('auth.register') }}">{{ t('nav_register') }}</a>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<main class="site-main">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flash-stack">
+                {% for category, message in messages %}
+                    <div class="flash flash-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <span>&copy; 2026 {{ t('footer_note') }}</span>
+        <span class="footer-note">Built for the FINOVATE Challenge · Lilongwe, Malawi</span>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ t('nav_literacy') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<h1>{{ t('nav_literacy') }}</h1>
+<p style="color:var(--ink-soft); max-width: 640px;">
+    A few essentials to help you make confident decisions about savings, loans and your new bank account.
+</p>
+
+<div class="literacy-layout">
+    <div class="literacy-main">
+        <div class="tip-grid">
+        {% for tip in tips %}
+        <div class="tip-card">
+            <span class="icon">{{ tip.icon|safe }}</span>
+            <h3>{{ tip.title.get(current_lang, tip.title.en) }}</h3>
+            <p>{{ tip.body.get(current_lang, tip.body.en) }}</p>
+        </div>
+        {% endfor %}
+        </div>
+
+        <p style="margin-top: 32px;">
+        <a class="btn btn-primary" href="{{ url_for('main.select_bank') }}">{{ t('home_start_btn') }}</a>
+        </p>
+    </div>
+
+    <aside class="glossary-panel">
+        <h3>{{ t('glossary_title') }}</h3>
+        <p class="glossary-intro">{{ t('glossary_intro') }}</p>
+        <dl class="glossary-list">
+        {% for item in glossary %}
+            <dt>{{ item.term.get(current_lang, item.term.en) }}</dt>
+            <dd>{{ item.definition.get(current_lang, item.definition.en) }}</dd>
+        {% endfor %}
+        </dl>
+    </aside>
+</div>
+
+{% endblock %}

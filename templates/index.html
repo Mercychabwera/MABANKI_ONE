@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,3 +48,58 @@
 
 </body>
 </html>
+=======
+{% extends "base.html" %}
+{% block title %}MABANKI-ONE — {{ t('brand_tagline') }}{% endblock %}
+{% block content %}
+
+<section class="hero">
+    <div class="hero-eyebrow">Malawi · One Application, Many Banks</div>
+    <h1>{{ t('brand_tagline') }}</h1>
+    <p class="lede">{{ t('home_intro') }}</p>
+    <div class="hero-actions">
+        <a class="btn btn-gold" href="{{ url_for('main.select_bank') }}">{{ t('home_start_btn') }}</a>
+        <a class="btn btn-ghost" style="background:rgba(255,255,255,0.08); color:#fdfaf0; border-color:rgba(255,255,255,0.35);" href="{{ url_for('main.literacy') }}">{{ t('home_learn_btn') }}</a>
+    </div>
+</section>
+
+<h2>{{ t('home_what_you_can_do') }}</h2>
+
+<div class="feature-grid">
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <p>{{ t('home_feature_compare') }}</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span>
+        <p>{{ t('home_feature_rates') }}</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l8-6 8 6v11"/><path d="M9 21v-6h6v6"/></svg></span>
+        <p>{{ t('home_feature_choose') }}</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+        <p>{{ t('home_feature_apply') }}</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <p>{{ t('home_feature_track') }}</p>
+    </div>
+    <div class="feature-item">
+        <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><rect x="9.5" y="11" width="5" height="4.5" rx="1"/><path d="M10.5 11v-1a1.5 1.5 0 0 1 3 0v1"/></svg></span>
+        <p>Your data is protected with hashed passwords and two-step (OTP) sign-in.</p>
+    </div>
+</div>
+
+<h2>{{ t('journey_title') }}</h2>
+<p style="color:var(--ink-soft); max-width: 640px;">{{ t('journey_intro') }}</p>
+
+<ol class="journey-list">
+{% for n in range(1, 16) %}
+    <li><span class="journey-step-num">{{ n }}</span><span>{{ t('journey_step_' ~ n) }}</span></li>
+{% endfor %}
+</ol>
+
+{% endblock %}
+>>>>>>> a89820d0643d41027ff18f29b8182b32c6ffdcb3

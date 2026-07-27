@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,3 +40,37 @@ Return Home
 
 </body>
 </html>
+=======
+{% extends "base.html" %}
+{% block title %}{{ t('success_title') }} — MABANKI-ONE{% endblock %}
+{% block content %}
+
+<div class="narrow">
+<div class="step-labels">
+    <span class="done">1. {{ t('app_form_title') }}</span>
+    <span class="done">2. {{ t('upload_title') }}</span>
+    <span class="done">3. {{ t('review_title') }}</span>
+    <span class="done">4. {{ t('success_title') }}</span>
+</div>
+<div class="progress-track"><div class="progress-fill" style="width: 100%;"></div></div>
+
+<div class="card" style="text-align:center;">
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12 11 15 16 9"/></svg></div>
+    <h1>{{ t('success_title') }}</h1>
+    <p>
+        Thank you for using Mabanki-One. Your application to
+        <strong>{{ application.bank_name }}</strong> for a
+        <strong>{{ application.account_type }}</strong> has been received and will be
+        forwarded for review.
+    </p>
+    <p class="hint">Application reference: #{{ application.id }} · Submitted {{ application.submitted_at.strftime('%d %b %Y, %H:%M') }} UTC</p>
+
+    <div class="form-actions" style="justify-content:center; margin-top: 24px;">
+        <a class="btn btn-primary" href="{{ url_for('dashboard.dashboard') }}">{{ t('nav_dashboard') }}</a>
+        <a class="btn btn-ghost" href="{{ url_for('main.home') }}">{{ t('nav_home') }}</a>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+>>>>>>> a89820d0643d41027ff18f29b8182b32c6ffdcb3
