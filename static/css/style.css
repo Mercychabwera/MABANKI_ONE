@@ -322,6 +322,87 @@ tbody td {
 tbody tr:hover { background: #fbfbf6; }
 .rate { font-family: var(--font-mono); font-weight: 500; color: var(--green-900); }
 
+.bank-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.bank-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bank-card-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.bank-logo {
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+    border-radius: 18px;
+    background: var(--green-100);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bank-logo img {
+    max-width: 100%;
+    max-height: 64px;
+    object-fit: contain;
+}
+
+.bank-opening {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+
+.bank-rates {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.rate-item {
+    background: var(--green-100);
+    border-radius: var(--radius-md);
+    padding: 18px;
+}
+
+.rate-label {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.rate-value {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--green-900);
+}
+
+.bank-actions {
+    margin-top: auto;
+}
+
+.btn-block { width: 100%; }
+
 /* ---- forms -------------------------------------------------------------- */
 form { margin: 0; }
 fieldset { border: none; padding: 0; margin: 0 0 22px; }
@@ -523,6 +604,52 @@ input[type=file] { padding: 10px; background: var(--paper-raised); }
     gap: 8px;
     font-size: 0.82rem;
     color: var(--ink-soft);
+}
+
+/* ---- typing animation for hero headline --------------------------------- */
+.typing-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-height: 4.2rem;
+}
+.typing-line {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typeIn 1.2s steps(20, end) forwards;
+    animation-delay: 0.2s;
+}
+.typing-line-brand {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typeIn 0.8s steps(11, end) forwards;
+    animation-delay: 1.5s;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--gold-500);
+    letter-spacing: 0.04em;
+}
+.typing-cursor {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-weight: 300;
+    color: var(--gold-500);
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    animation: blink 0.8s step-end infinite;
+    margin-left: 4px;
+    vertical-align: baseline;
+    position: relative;
+    top: -2px;
+}
+@keyframes typeIn {
+    to { width: 100%; }
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 /* ---- responsive ---------------------------------------------------------- */

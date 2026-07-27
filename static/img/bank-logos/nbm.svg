@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" role="img" aria-label="National Bank of Malawi logo">
+  <defs>
+    <linearGradient id="nbm-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#003366"/>
+      <stop offset="100%" stop-color="#001a33"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="12" fill="url(#nbm-grad)" />
+  <circle cx="50" cy="50" r="35" fill="#FFD700" opacity="0.9"/>
+  <circle cx="50" cy="50" r="32" fill="url(#nbm-grad)" stroke="#FFD700" stroke-width="2"/>
+  <text x="50" y="62" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFD700" text-anchor="middle">NBM</text>
+  <text x="140" y="45" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">National Bank</text>
+  <text x="140" y="68" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF">of Malawi</text>
+</svg>

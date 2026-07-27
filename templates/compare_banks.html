@@ -7,38 +7,41 @@
     Compare participating banks below. When you've found the right fit, click "Open Account" to get started.
 </p>
 
-<div class="table-wrap">
-<table>
-<thead>
-    <tr>
-        <th>Bank</th>
-        <th>{{ t('home_feature_rates') }}</th>
-        <th>Loan Interest</th>
-        <th>Opening Balance</th>
-        <th>Action</th>
-    </tr>
-</thead>
-<tbody>
+<div class="bank-grid">
     {% for bank in banks %}
-    <tr>
-        <td><strong>{{ bank.name }}</strong></td>
-        <td><span class="rate">{{ bank.savings }}</span></td>
-        <td><span class="rate">{{ bank.loan }}</span></td>
-        <td>{{ bank.opening }}</td>
-        <td>
-            <a class="btn btn-primary btn-sm" href="{{ url_for('applications.new_application', bank=bank.name) }}">
+    <section class="bank-card">
+        <div class="bank-card-header">
+            <div class="bank-logo">
+                <img src="{{ url_for('static', filename=bank.logo) }}" alt="{{ bank.name }} logo">
+            </div>
+            <div>
+                <h3>{{ bank.name }}</h3>
+                <p class="bank-opening">Opening balance: <strong>{{ bank.opening }}</strong></p>
+            </div>
+        </div>
+
+        <div class="bank-rates">
+            <div class="rate-item">
+                <span class="rate-label">Savings</span>
+                <span class="rate-value">{{ bank.savings }}</span>
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">Loan</span>
+                <span class="rate-value">{{ bank.loan }}</span>
+            </div>
+        </div>
+
+        <div class="bank-actions">
+            <a class="btn btn-primary btn-block" href="{{ url_for('applications.new_application', bank=bank.name) }}">
                 Open Account
             </a>
-        </td>
-    </tr>
+        </div>
+    </section>
     {% endfor %}
-</tbody>
-</table>
 </div>
 
-<p style="margin-top: 24px;">
+<p style="margin-top: 24px; text-align: center;">
     <a class="btn btn-ghost" href="{{ url_for('main.home') }}">&larr; Back Home</a>
 </p>
 
 {% endblock %}
-

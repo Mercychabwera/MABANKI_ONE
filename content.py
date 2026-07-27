@@ -4,36 +4,42 @@ literacy tips, each provided in English, Chichewa and Chitumbuka."""
 BANKS = [
     {
         "name": "National Bank of Malawi",
+        "logo": "img/bank-logos/nbm.svg",
         "savings": "10% per year",
         "loan": "24% per year",
         "opening": "MK5,000",
     },
     {
         "name": "Standard Bank Malawi",
+        "logo": "img/bank-logos/standard.ico",
         "savings": "9% per year",
         "loan": "22% per year",
         "opening": "MK10,000",
     },
     {
         "name": "FDH Bank",
+        "logo": "img/bank-logos/fdh.png",
         "savings": "8% per year",
         "loan": "20% per year",
         "opening": "MK2,000",
     },
     {
         "name": "NBS Bank",
+        "logo": "img/bank-logos/nbs.png",
         "savings": "9.5% per year",
         "loan": "23% per year",
         "opening": "MK5,000",
     },
     {
         "name": "CDH Bank",
+        "logo": "img/bank-logos/cdh.svg",
         "savings": "8.5% per year",
         "loan": "21% per year",
         "opening": "MK3,000",
     },
     {
         "name": "Ecobank Malawi",
+        "logo": "img/bank-logos/ecobank.svg",
         "savings": "9% per year",
         "loan": "22.5% per year",
         "opening": "MK5,000",

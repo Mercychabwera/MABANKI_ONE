@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 120" role="img" aria-label="Standard Bank Malawi logo">
+  <defs>
+    <linearGradient id="sb-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#003D7A"/>
+      <stop offset="100%" stop-color="#002147"/>
+    </linearGradient>
+  </defs>
+  <rect width="280" height="120" rx="12" fill="url(#sb-grad)" />
+  <rect x="20" y="30" width="50" height="60" rx="4" fill="#FFFFFF" opacity="0.95"/>
+  <text x="45" y="68" font-family="Arial, sans-serif" font-size="36" font-weight="900" fill="#003D7A" text-anchor="middle">SB</text>
+  <text x="140" y="48" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">Standard Bank</text>
+  <text x="140" y="72" font-family="Arial, sans-serif" font-size="14" font-weight="500" fill="#FFFFFF">Malawi</text>
+</svg>
