@@ -1,59 +1,80 @@
-# MABANKI‑ONE
+MABANKI-ONE
+FINOVATE 2026 Hackathon Project
 
-**One Portal. Multiple Banks. Simple Account Opening.**
+Team Name: Binary minds
 
-MABANKI‑ONE is a prototype web portal that lets someone in Malawi compare
-participating banks, learn the basics of personal finance, and complete a
-single online application — including KYC document upload — to open an
-account with the bank of their choice.
+University: Lilongwe University of Agriculture and  Natural Resources (LUANAR)
 
-Built for the **FINOVATE Challenge**.
+Project Overview:
+Mabanki-One is a unified banking portal that allows users to access banking services from multiple banks through a single platform. Instead of visiting different bank websites, users can compare products, learn about financial services, receive recommendations and apply online in one place.
 
----
+"Building Student-Led Solutions for Banking, Payments and Financial Inclusion."
 
-## ✨ What's in this build
+Problem Statement:
+Many people in Malawi find it difficult to compare banking products because information is spread across different banks.
 
-| Feature | Notes |
-|---|---|
-| 🌍 Multi-language UI | English, Chichewa, Chitumbuka — switch anytime from the header |
-| 🏦 Smart bank comparison | Side-by-side savings/loan rates and opening balances |
-| 📚 Financial literacy module | Short, translated tips on saving, interest, budgeting, debt, KYC |
-| 👤 User registration & login | Email + password, session-based auth |
-| 🔒 Password hashing | Werkzeug `generate_password_hash` / `check_password_hash` — no plaintext passwords, ever |
-| 🔐 MFA (OTP-based) | 6-digit one-time code required after password, 5-minute expiry |
-| 💾 Save-and-resume applications | Every step is saved to the database; "My Applications" lets you pick up where you left off |
-| 📎 KYC document upload | ID, photo, proof of residence (+ optional employment/business docs) |
-| 📊 Application tracking dashboard | Status badges and progress bar per application |
-| 🧾 Audit logs | Every security-relevant action (register, login, OTP, uploads, submission) is logged; users see their own trail, admins see everyone's |
-| 🎨 Refreshed UI | Clean, distinct visual identity, responsive layout |
+Challenges include:
+✓. Limited access to banking information
+Low financial literacy
+✓. Time-consuming application processes
+✓. Difficulty choosing suitable financial products
+Suggested Solution
+Mabanki-One provides a single platform where users can:
+✓. Compare banking products from different banks
+✓. Learn financial concepts through simple educational content
+✓. Get personalized recommendations
+✓. Apply for banking services online
+✓. Track application status
+✓. Continue unfinished applications 
+✓. Access information in local languages
 
----
+Installation Guide:
+✓. Step 1: Open the Project Repository
+and then visit the project repository:
 
-## ⚠️ Demo-mode notes (read this before judging)
+"MABANKI_ONE Repository"
 
-This is a **hackathon prototype**, not a production banking system:
+✓. Step 2: Download the Project
+=> Click on the green Code button.
+=> Click Download ZIP.
+=> Save the ZIP file to your computer.
+=> Extract the ZIP file.
+✓. Step 3: Open the Project Folder
+=> Open the extracted "MABANKI_ONE" folder in Visual Studio Code.
 
-- **OTP delivery is simulated.** There is no SMS/email gateway wired up, so
-  the one-time code is shown directly on the verification screen (clearly
-  labeled "DEMO MODE") instead of being texted/emailed. Swapping in a real
-  provider (e.g. an SMS aggregator operating in Malawi) only requires
-  replacing the `session["demo_otp_code"]` line in `routes/auth.py` with an
-  actual send call.
-- **Bank approval is simulated.** Submitted applications move to
-  "Submitted" status; there's no real integration with any bank's core
-  banking system.
-- **Chichewa/Chitumbuka translations** in `translations.py` and
-  `content.py` are a best-effort pass for the demo and should be reviewed
-  by a native speaker before any real deployment.
-- **SQLite** is used for simplicity. For production, swap
-  `SQLALCHEMY_DATABASE_URI` in `config.py` for a managed Postgres/MySQL
-  instance.
+✓. Step 4: Open Terminal in VS Code:
+=> Click Terminal
+=> Click New Terminal
+✓. Step 5: Create a Virtual Environment
+python -m venv venv
+✓. Step 6: Activate the Virtual Environment
+venv\Scripts\activate
+✓. Step 7: Install Required Packages
+ pip install -r requirements.txt 
+✓. Step 8: Run the Application
+ python app.py 
+✓. Step 9: Open the Application.
+After running the command above, open your web browser and go to:
 
----
+http://127.0.0.1:5000
 
-## 🗂️ Project structure
+You will now see the Mabanki-One application running.
 
-```
+Technologies Used:
+Frontend
+HTML
+CSS
+Bootstrap
+Backend
+Python
+Flask
+Database
+SQLite
+Development Tools
+Git
+GitHub
+Visual Studio Code
+🗂️ Project structure
 mabanki-one/
 ├── app.py                 # App factory, blueprint registration, i18n wiring, CLI commands
 ├── config.py               # Configuration (secret key, DB URI, upload limits, languages)
@@ -71,96 +92,103 @@ mabanki-one/
 ├── static/css/style.css        # Single stylesheet, CSS variables for theming
 ├── uploads/                   # KYC files land here, namespaced per user/application
 └── instance/                  # SQLite database file lives here (auto-created)
-```
+Step 7: Key Features
+Multi-Bank Access
 
----
+Users can view banking products from different banks in one place.
 
-## 🚀 Running it locally
+Product Comparison:
+✓. Compare savings accounts, loans, and other banking products easily.
 
-**Requirements:** Python 3.10+
+Financial Literacy Hub:
+✓. Provides simple explanations of banking and financial topics.
 
-```bash
-# 1. Create and activate a virtual environment (recommended)
-python3 -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+Smart Recommendations:
+✓. Suggests suitable banking products based on user needs.
 
-# 2. Install dependencies
-pip install -r requirements.txt
+Application Tracking:
+✓. Allow users to check the progress of submitted applications.
 
-# 3. Initialise the database (creates instance/mabanki.db)
-export FLASK_APP=app.py          # Windows (PowerShell): $env:FLASK_APP="app.py"
-flask init-db
+Multi-Language Support
+✓. Available both in:
+=> English, Chichewa and Chitumbuka
 
-# 4. (Optional) create an admin account so you can view the full audit log
-flask create-admin admin@mabanki.mw "AStrongPassword123" --fullname "Demo Admin"
+Secure Login: 
+✓. Passwords are encrypted using industry-standard hashing methods. 
+✓. Plain-text passwords are not permitted. 
 
-# 5. Run the app
-python app.py
-```
+OTP Verification: ✓.One-Time Passwords are used for additional account security and OTP codes expire automatically after a short period.
 
-The site will be available at **http://127.0.0.1:5000**.
+User Privacy Users can only access their own applications and documents.
 
-> The database also auto-creates itself the first time `app.py` runs, so
-> step 3 is optional — it's there mainly if you want a clean DB before a
-> demo.
+Secure File Uploads: ✓. Uploaded documents are stored securely. 
+✓. File names are automatically protected.
 
----
+Audit Logging: ✓.Important system activities are recorded for security and monitoring purposes.
 
-## 🧭 Demo flow (suggested walkthrough for judges)
+ Team Members and Roles: 
+1. Jacqueline Kufeyani: Project Manager & Documentation Lead 
+2. Mercy Chabwera: Software Developer 
+3. Martha James: Presenter & Pitch Lead 
+4. Wezzie Muheka: Research Lead
+5. Dines Nkumcheza: Business Strategist
 
-1. **Home (`/`)** — switch the language selector in the header between
-   English / Chichewa / Chitumbuka and note the page updates.
-2. **Compare Banks (`/select-bank`)** — see savings/loan rates side by
-   side for six Malawian banks.
-3. **Financial Literacy (`/literacy`)** — browse the short, translated
-   tips on saving, interest rates, budgeting, debt, and KYC.
-4. **Register (`/register`)** — create an account; note the password is
-   never stored or shown in plain text.
-5. **Log in (`/login`)** — enter your credentials, then land on the
-   **OTP screen**. In demo mode the 6-digit code is shown right there
-   (labelled DEMO MODE) — enter it to complete MFA sign-in.
-6. **Open an account** — from the bank comparison table, click "Open
-   Account" on any bank. Fill in the details form, upload the required
-   KYC documents (any PDF/PNG/JPG works for the demo), review the summary,
-   and submit.
-7. **Save-and-resume** — start a second application, fill in the details
-   step, then navigate away (e.g. to Home) without finishing. Go to
-   **My Applications (`/dashboard`)** — the draft is waiting there with a
-   "Resume" button that drops you back exactly where you left off.
-8. **Track applications** — the dashboard shows a status badge (Draft /
-   Submitted) and progress bar for every application you've started.
-9. **Audit trail** — open the account menu → **Activity Log** to see your
-   own security history (registration, sign-ins, OTP events, submissions).
-   If you created an admin account in step 4 of setup, log in as that
-   admin and open **Admin: Audit Log** from the account menu to see the
-   full, system-wide log.
+Future Improvements:
+✓. Mobile application
+✓. USSD integration
+✓. More bank partnerships
+✓. AI-powered chatbot assistant
+✓. Fraud detection features
 
----
+Business Model Summary
+  
+MABANKI-ONE
 
-## 🔒 Security notes
+1. Problem Statement  
+Many people face several challenges when opening a bank account. These include:  
+- Limited access to banking information – Many people do not know the requirements or steps for opening an account.  
+- Low financial literacy – Some customers struggle to understand different account types and banking services.  
+- Time-consuming application process – Customers spend a lot of time travelling to bank branches filling out paper forms and waiting in long queues.  
+- Difficulty choosing suitable financial products – Customers may not know which account best suits their needs.  
+- Language barriers – Some customers cannot easily understand banking information because it is not available in their preferred language.  
 
-- Passwords are hashed with Werkzeug's `generate_password_hash` (PBKDF2)
-  — plaintext passwords are never stored or logged.
-- OTP codes are hashed before being stored and expire after 5 minutes;
-  a maximum of 5 verification attempts is enforced per code.
-- Every application and document is scoped to the owning user; attempting
-  to view another user's application returns `403 Forbidden`.
-- Uploaded files are renamed with a random suffix on save and stored
-  outside of any publicly served static path.
-- All sensitive actions are written to the audit log with a timestamp,
-  actor, and originating IP address.
+These challenges make banking less accessible especially for first-time users and people living far from bank branches.
 
----
+2. Target Users  
+Our solution is designed for:  
+Students  
+Working professionals  
+Small business owners  
+First-time bank customers  
+People in rural and urban areas  
+Banks that want to improve customer service and reduce paperwork
 
-## 🛣️ Possible next steps
+3. Value Proposition  
+Binary Minds – Scan & Sign offers a secure simple and paperless way to open a bank account.  
+Our solution provides:  
+- Online account opening from anywhere  
+- ID scanning for faster data capture  
+- Electronic signature for paperless applications  
+- Clear information about banking products  
+- Multiple language support to reduce language barriers  
+- A faster and more convenient customer experience  
+- Reduced paperwork and lower operational costs for banks
 
-- Wire up a real SMS/email provider for OTP delivery.
-- Add a bank-facing dashboard so participating banks can review and
-  action applications directly (approve / reject / request more info).
-- Move file storage to object storage (e.g. S3-compatible) for
-  production deployments.
-- Add automated tests (pytest) around the auth and application flows.
+4. How the Project Could Be Sustained or Generate Value  
+The project can generate value by:  
+- Allowing banks to subscribe to or license the platform  
+- Reducing printing storage and administrative costs  
+- Helping banks process more applications in less time  
+- Improving customer satisfaction which can attract more customers  
+- Expanding the platform to serve multiple banks in Malawi and beyond
 
----
-
-*MABANKI‑ONE — built in Lilongwe, Malawi, for the FINOVATE Challenge.*
+5. Future Plans  
+In future versions we plan to add:  
+- AI-powered document verification  
+- Facial recognition for identity verification  
+- Live chat customer support  
+- Mobile banking integration  
+- Real-time application tracking  
+- More local language options  
+- Financial education tips to improve users' financial literacy  
+- Personalised account recommendations based on customer needs
